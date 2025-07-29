@@ -8,7 +8,7 @@ export const metaData = {
 };
 
 export const socialLinks = {
-  twitter: "https://x.com/AmritheshK",
+  twitter: "https://x.com/Amrithesh-Kakkoth",
   github: "https://github.com/Amrithesh-Kakkoth",
   instagram: "https://www.instagram.com/quasar1256/",
   linkedin: "https://www.linkedin.com/in/amrithesh-kakkoth/",
