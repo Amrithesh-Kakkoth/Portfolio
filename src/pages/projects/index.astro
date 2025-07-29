@@ -3,35 +3,34 @@ import Base from "../../layouts/Base.astro";
 
 const projects = [
   {
-    title: "NetGPT",
-    year: 2025,
+    title: "NetGPT: Packet Reconstruction AI",
+    tech: "Transformers, Networking, PyTorch",
     description:
-      "A transformer-based AI agent for real-time network traffic optimization and attack detection using packet reconstruction techniques.",
-    url: "https://github.com/Amrithesh-Kakkoth/NetGPT", // Update if needed
+      "Built a transformer-based AI model for reconstructing missing network packets, improving data reliability and detecting anomalies in real-time network traffic.",
+    url: "https://github.com/Amrithesh-Kakkoth/NetGPT",
   },
   {
     title: "Debian CLI Agent",
-    year: 2025,
+    tech: "LLM, Qwen2.5, Fine-tuning, Shell, Python",
     description:
-      "Lightweight LLM (Qwen2.5-0.5B fine-tuned) that translates natural language to shell commands for Debian-based systems.",
-    url: "https://github.com/Amrithesh-Kakkoth/debian-cli-agent", // Update if needed
+      "Developed a lightweight command-line agent that interprets natural language into shell commands using a fine-tuned Qwen2.5-0.5B model, optimized for Debian environments.",
+    url: "https://github.com/Amrithesh-Kakkoth/debian-cli-agent",
   },
   {
-    title: "DocuMind (RAG Pipeline)",
-    year: 2025,
+    title: "DocuMind: RAG with Multi-Vector DB",
+    tech: "RAG, LLM, LangChain, FAISS, groq",
     description:
-      "Built a scalable RAG pipeline with multi-vector document evaluation and query reformulation, optimized for observability and quality control.",
-    url: "https://github.com/Amrithesh-Kakkoth/documind", // Update if needed
+      "Built a retrieval-augmented generation pipeline with multi-vector document evaluation, context refinement, and hallucination reduction, optimized for technical document QA.",
+    url: "https://github.com/Amrithesh-Kakkoth/documind",
   },
   {
     title: "SecureVision",
-    year: 2024,
+    tech: "Computer Vision, Anomaly Detection, PyTorch",
     description:
-      "Anomaly detection system for computer vision pipelines using spatiotemporal encoding and feature deviation monitoring.",
-    url: "https://github.com/Amrithesh-Kakkoth/securevision", // Update if needed
+      "Designed a secure computer vision pipeline for anomaly detection using spatiotemporal encoding and latent feature monitoring across frames.",
+    url: "https://github.com/Amrithesh-Kakkoth/securevision",
   },
 ];
-
 
 const title = "Projects";
 const description = "My Projects";
@@ -54,7 +53,7 @@ const description = "My Projects";
                   {project.title}
                 </span>
                 <span class="text-neutral-600 dark:text-neutral-400 tabular-nums text-sm">
-                  {project.year}
+                  {project.tech}
                 </span>
               </div>
               <p class="prose prose-neutral dark:prose-invert pt-3">
