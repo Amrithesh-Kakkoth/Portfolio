@@ -2,6 +2,14 @@
 import Base from "../layouts/Base.astro";
 import { socialLinks } from "../config";
 import { Image } from "astro:assets";
+
+const calculateAge = () => {
+  const birthDate = new Date(2003, 6, 9); // July is month 6 (0-based)
+  const now = new Date();
+  const diff = now - birthDate;
+  const age = diff / (1000 * 60 * 60 * 24 * 365.25);
+  return `${Math.floor(age)}.${(age % 1).toFixed(9).substr(2)}`;
+};
 ---
 
 <Base>
@@ -16,40 +24,39 @@ import { Image } from "astro:assets";
       />
     </a>
 
-    <script>
-    function me_when() {
-      var a = new Date(2003, 7, 9); // your birthdate (July 09, 2003)
-      var b = new Date();
-      var c = b - a;
-      var d = c / (1000 * 60 * 60 * 24 * 365.25);
-      document.getElementById('my_age').innerHTML = '' + Math.floor(d) + '.' + (d % 1).toFixed(9).substr(2);
-    }
-
-    me_when();
-    setInterval(me_when, 1);
-    </script>
-
-    <h2 class="mb-8 text-2xl font-medium tracking-tight">
+    <h1 class="mb-8 text-2xl font-medium tracking-tight">
       hey, I'm <i><b>Amrithesh</b></i> Kakkoth
-    </h2>
+    </h1>
 
     <div class="prose prose-neutral dark:prose-invert">
-      <p5>
-        I'm a  <span id="my_age_container" class="inline-block" style="width: 80px; text-align: right; margin-right: 25px;"><span id="my_age"></span></span>         old guy from Kerala, India.
-      </p5>
-      <p5>
-        On weekdays, you’ll find me at <a href="https://mec.ac.in">Govt. Model Engineering College</a>. Weekends are usually split between <a href="https://maps.app.goo.gl/EtzLbs5MBFVH5StGA">Kochi</a>, <a href="https://maps.app.goo.gl/8cJTQW3CbSMsTa6p6">Kozhikode</a>, or locked into some project.
-      </p5>
-      <p5>
-        I like building AI agents — especially ones that speak terminal. My recent work includes <i>NetGPT</i>, a project for optimizing network traffic and attack detection. 
-        Previously interned at <a href="https://mecha.so">Mecha Systems</a> and <a href="https://kianaai.com">Kiana AI</a>.
-      </p5>
       <p>
-        When I'm not coding, I'm usually grinding Valorant, playing with LLMs, or thinking about how to legally pay the least tax possible 😅.
-      </p5>
-      <p5>
-        You can find my work on GitHub → <a href="https://github.com/Amrithesh-Kakkoth">quasar1256</a>
-      </p5>
+        I'm a <span style="display: inline-block; width: 80px; text-align: right; margin-right: 20px;">
+          <span id="my_age">{calculateAge()}</span>
+        </span> 
+        old guy from Kerala, India.
+      </p>
+
+      <p>
+        On weekdays, you’ll find me at <a href="https://mec.ac.in" class="underline hover:text-blue-600">Govt. Model Engineering College</a>.
+        Weekends are usually split between <a href="https://maps.app.goo.gl/EtzLbs5MBFVH5StGA" class="underline hover:text-blue-600">Kochi</a>,
+        <a href="https://maps.app.goo.gl/8cJTQW3CbSMsTa6p6" class="underline hover:text-blue-600">Kozhikode</a>, or locked into some project.
+      </p>
+
+      <p>
+        I like building AI agents — especially ones that speak terminal. My recent work includes <i>NetGPT</i>,
+        a project for optimizing network traffic and attack detection. Previously interned at 
+        <a href="https://mecha.so" class="underline hover:text-blue-600"> Mecha Systems</a> and 
+        <a href="https://kianaai.com" class="underline hover:text-blue-600"> Kiana AI</a>.
+      </p>
+
+      <p>
+        When I'm not coding, I'm usually grinding Valorant, playing with LLMs, or thinking about how to
+        legally pay the least tax possible 😅.
+      </p>
+
+      <p>
+        You can find my work on Hugging Face → <a href="https://huggingface.co/quasar1256" class="underline hover:text-blue-600">quasar1256</a>
+      </p>
     </div>
   </section>
 </Base>
