@@ -16,23 +16,40 @@ import { Image } from "astro:assets";
       />
     </a>
 
+    <script>
+    function me_when() {
+      var a = new Date(2004, 6, 15); // your birthdate (July 15, 2004)
+      var b = new Date();
+      var c = b - a;
+      var d = c / (1000 * 60 * 60 * 24 * 365.25);
+      document.getElementById('my_age').innerHTML = '' + Math.floor(d) + '.' + (d % 1).toFixed(9).substr(2);
+    }
+
+    me_when();
+    setInterval(me_when, 1);
+    </script>
+
     <h1 class="mb-8 text-2xl font-medium tracking-tight">
-      hey, I'm <i><b>Amrithesh</b></i> Kakkoth 👋
+      hey, I'm <i><b>Amrithesh</b></i> Kakkoth
     </h1>
 
     <div class="prose prose-neutral dark:prose-invert">
       <p>
-        I'm a Computer Science student at <a href="https://mec.ac.in">MEC</a>, constantly torn between debugging neural nets and grinding LeetCode problems.
+        I'm a <span id="my_age_container" class="inline-block" style="width: 80px; text-align: right; margin-right: 25px;"><span id="my_age"></span></span> 
+        year old builder from Kerala, India.
       </p>
       <p>
-        You’ll usually catch me building AI agents (sometimes for Linux terminals, sometimes just for fun), or working on network optimization projects like <i>NetGPT</i>.
-        I've also interned at <a href="https://mecha.so">Mecha Systems</a> and <a href="https://kiana.ai">Kiana AI</a>.
+        On weekdays, you’ll find me at <a href="https://mec.ac.in">Govt. Model Engineering College</a>. Weekends are usually split between <a href="https://maps.app.goo.gl/EtzLbs5MBFVH5StGA">Kochi</a>, <a href="https://maps.app.goo.gl/DsTQAUSdMrDeCnYk9">Kunnamkulam</a>, or locked into some project.
       </p>
       <p>
-        When I’m not coding, I’m probably playing Valorant, tinkering with some weird model, or thinking about how to outsmart the tax system legally 😅.
+        I like building AI agents — especially ones that speak terminal. My recent work includes <i>NetGPT</i>, a project for optimizing network traffic and attack detection. 
+        Previously interned at <a href="https://mecha.so">Mecha Systems</a> and <a href="https://kianaai.com">Kiana AI</a>.
       </p>
       <p>
-        My GitHub's where the fun stuff lives → <a href="https://github.com/quasar1256">quasar1256</a>
+        When I'm not coding, I'm usually grinding Valorant, playing with LLMs, or thinking about how to legally pay the least tax possible 😅.
+      </p>
+      <p>
+        You can find my work on GitHub → <a href="https://github.com/Amrithesh-Kakkoth">quasar1256</a>
       </p>
     </div>
   </section>
