@@ -3,13 +3,10 @@ import Base from "../layouts/Base.astro";
 import { socialLinks } from "../config";
 import { Image } from "astro:assets";
 
-const calculateAge = () => {
-  const birthDate = new Date(2003, 6, 9); // July is month 6 (0-based)
-  const now = new Date();
-  const diff = now - birthDate;
-  const age = diff / (1000 * 60 * 60 * 24 * 365.25);
-  return `${Math.floor(age)}.${(age % 1).toFixed(9).substr(2)}`;
-};
+const birthDate = new Date(2003, 6, 9); // Month is 0-based: 6 = July
+const now = new Date();
+const age = (now - birthDate) / (1000 * 60 * 60 * 24 * 365.25);
+const formattedAge = `${Math.floor(age)}.${(age % 1).toFixed(9).substring(2)}`;
 ---
 
 <Base>
@@ -30,16 +27,18 @@ const calculateAge = () => {
 
     <div class="prose prose-neutral dark:prose-invert">
       <p>
-        I'm a <span style="display: inline-block; width: 80px; text-align: right; margin-right: 20px;">
-          <span id="my_age">{calculateAge()}</span>
+        I'm a 
+        <span style="display: inline-block; width: 80px; text-align: right; margin-right: 20px;">
+          {formattedAge}
         </span> 
         old guy from Kerala, India.
       </p>
 
       <p>
         On weekdays, you’ll find me at <a href="https://mec.ac.in" class="underline hover:text-blue-600">Govt. Model Engineering College</a>.
-        Weekends are usually split between <a href="https://maps.app.goo.gl/EtzLbs5MBFVH5StGA" class="underline hover:text-blue-600">Kochi</a>,
-        <a href="https://maps.app.goo.gl/8cJTQW3CbSMsTa6p6" class="underline hover:text-blue-600">Kozhikode</a>, or locked into some project.
+        Weekends are usually split between 
+        <a href="https://maps.app.goo.gl/EtzLbs5MBFVH5StGA" class="underline hover:text-blue-600"> Kochi</a>,
+        <a href="https://maps.app.goo.gl/8cJTQW3CbSMsTa6p6" class="underline hover:text-blue-600"> Kozhikode</a>, or locked into some project.
       </p>
 
       <p>
@@ -60,3 +59,4 @@ const calculateAge = () => {
     </div>
   </section>
 </Base>
+  
